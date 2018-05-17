@@ -26,6 +26,9 @@ c = Synth(\onsetsynth, [
 	\offset, 0.04
 ]);
 
+
+OSCdef(\onsetOSCdef).clear;
+OSCdef(\onsetOSCdef).free;
 OSCdef(\onsetOSCdef, {|msg, time, addr, recvPort|
 	msg[3].postln; // posts 1 if hit is detected
 }, '/onset', s.addr);

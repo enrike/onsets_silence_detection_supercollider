@@ -21,6 +21,9 @@ b = Synth(\silencesynth, [
 				\checktime, 10,
 ]);
 
+
+OSCdef(\silenceOSCdef).clear;
+OSCdef(\silenceOSCdef).free;
 OSCdef(\silenceOSCdef, {|msg, time, addr, recvPort|
 	if (msg[3]==1, {
 		"silence".postln;
